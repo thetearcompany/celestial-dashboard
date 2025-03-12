@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 231 15% 15%;
+
+  --muted: 231 15% 95%;
+  --muted-foreground: 231 15% 45%;
+
+  --popover: 231 100% 99%;
+  --popover-foreground: 231 15% 15%;
+
+  --card: 231 100% 99%;
+  --card-foreground: 231 15% 15%;
+
+  --border: 231 15% 80%;
+  --input: 231 15% 80%;
+
+  --primary: 231 100% 55%;
+  --primary-foreground: 231 100% 99%;
+
+  --secondary: 231 15% 90%;
+  --secondary-foreground: 231 15% 15%;
+
+  --accent: 0 100% 40%; /* Głębsza czerwień */
+  --accent-foreground: 231 15% 15%;
+
+  --destructive: 0 84% 50%; /* Intensywniejsza destrukcja */
+  --destructive-foreground: 231 100% 99%;
+
+  --ring: 231 100% 55%;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 231 50% 10%;
+  --foreground: 231 15% 95%;
+
+  --muted: 231 15% 20%;
+  --muted-foreground: 231 15% 65%;
+
+  --popover: 231 50% 10%;
+  --popover-foreground: 231 15% 95%;
+
+  --card: 231 50% 10%;
+  --card-foreground: 231 15% 95%;
+
+  --border: 231 15% 25%;
+  --input: 231 15% 25%;
+
+  --primary: 231 100% 65%;
+  --primary-foreground: 231 15% 95%;
+
+  --secondary: 231 15% 25%;
+  --secondary-foreground: 231 15% 95%;
+
+  --accent: 0 100% 50%;
+  --accent-foreground: 231 50% 10%;
+
+  --destructive: 0 84% 45%;
+  --destructive-foreground: 231 15% 95%;
+
+  --ring: 231 100% 65%;
+}
+
+/* Divine Light Effect */
+.divine-light::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.4) 0%, rgba(255, 215, 0, 0) 75%);
+  filter: blur(12px);
+  opacity: 1;
+  animation: divineLight 3s infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes divineLight {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.layout-background {
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(at 50% 50%, rgba(255, 170, 0, 0.6) 0%, transparent 50%),
+              radial-gradient(at 30% 20%, rgba(255, 100, 0, 0.5) 0%, transparent 40%),
+              radial-gradient(at 70% 80%, rgba(255, 200, 100, 0.4) 0%, transparent 45%),
+              radial-gradient(at 20% 60%, rgba(255, 140, 0, 0.35) 0%, transparent 30%),
+              radial-gradient(at 80% 30%, rgba(255, 180, 60, 0.3) 0%, transparent 40%),
+              radial-gradient(at 50% 90%, rgba(255, 220, 150, 0.2) 0%, transparent 50%);
+  max-height: 800px;
+  height: 80vh;
+  max-width: 1400px;
+  width: 100%;
+  filter: blur(35px);
+  z-index: -1;
+  animation: divineLight 3s infinite alternate;
+}
